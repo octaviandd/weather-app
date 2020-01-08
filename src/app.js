@@ -1,16 +1,16 @@
 const logo = document.querySelector('.logo');
 const location = document.querySelector('.location');
-const temperature = document.querySelector('.second-div')
-const forecast = document.querySelector('.third-div')
+const temperature = document.querySelector('.temperature')
+const forecast = document.querySelector('.forecast-details')
+const toCelsius = document.querySelector('#celsius')
+const toFahrenheit = document.querySelector('#fahrenheit')
+
+
 
 window.addEventListener('load', () =>{
     let lat;
     let long;
-})
 
-
-
-function getWeatherInfo() {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position =>{
             long = position.coords.longitude;
@@ -26,20 +26,25 @@ function getWeatherInfo() {
                      console.log(data)
                 
                 location.innerHTML = data.timezone
-                temperature.innerHTML = data.currently.temperature
+                temperature.innerHTML = Math.round(data.currently.temperature + " °F")
+
+                //tocelsius
+                toCelsius.addEventListener('click', function(){
+                    temperature.innerHTML = Math.round((data.currently.temperature - 32) * 0.55)
+                })
+
+                toFahrenheit.addEventListener('click', function(){
+                    temperature.innerHTML = Math.round(((data.currently.temperature - 32) * 0.55) * 1.8 + 32)
+                })
+
                 forecast.innerHTML = data.daily.summary
-                let currentIcon = data.currently.icon
+                let currentIcon = data.currently.icon.toUpperCase();
 
                 var skycons = new Skycons({"color": "white"});
-                skycons.add(document.getElementById("icon1"), `Skycons.${currentIcon.toUpperCase()}`);
+                skycons.add(document.querySelector("#icon1"), Skycons.RAIN);
 
                 skycons.play();
             })
         })  
-    } 
-}
-
-getWeatherInfo();
-
-
-
+    }
+}) 
