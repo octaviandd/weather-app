@@ -1,4 +1,1 @@
 # weather-app
-
-*UI
-*API 
