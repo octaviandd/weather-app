@@ -37,22 +37,15 @@ body{
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    width: 350px;
+    width: 400px;
     height: 600px;
-    border: 1px solid rgba(86, 156, 197, 0.658);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     background-color: #fbc7d4;
-
+    color:white;
 }
-
-.first-div{
-    display: flex;
-    justify-content: center;
-    
-}
-
 
 
 .main-container div{
@@ -61,4 +54,44 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.first-div{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.temperature-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.temperature-info a{
+ color: white;
+}
+
+.temperature-info h3{
+    font-size: 22px;
+}
+
+.temperature-info div{
+    font-size: 20px;
+}
+
+.third-div{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    height: 150px !important;
+}
+
+.forecast-title{
+    font-size: 25px;
+}
+
+.location{
+    font-size: 25px;
+    word-wrap: break-word;
+    text-align: center;
 }
