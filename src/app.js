@@ -56,13 +56,13 @@ const getData = (function(){
 
 
 
-function getLocation(){
-    tomtom.setProductInfo('<your-product-name>', '<your-product-version>');
-            tomtom.L.map('map', {
-		    key: "94AHVQr8yCP1ISEGmJAIv5oGw1R7fIKW",
-            source: 'vector',
-            basePath: '/jssdk-4'
-	    });
-}
+// function getLocation(){
+//     tomtom.setProductInfo('<your-product-name>', '<your-product-version>');
+//             tomtom.L.map('map', {
+// 		    key: "94AHVQr8yCP1ISEGmJAIv5oGw1R7fIKW",
+//             source: 'vector',
+//             basePath: '/jssdk-4'
+// 	    });
+// }
 
-getLocation();
+// getLocation();
